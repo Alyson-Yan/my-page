@@ -1,4 +1,65 @@
 body {
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do menu fixo no topo */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: #00ff00;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #00ff00;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin-top: 50px;
+}
+
+.foto {
+    width: 300px;
+    border-radius: 50px;
+    margin: 20px auto;
+    float: right;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+p {
+    font: 1;
+    margin: 20;
+}
+
+/* Estilo para o efeito Matrix */
+body {
     margin: 0;
     overflow: hidden;
     background-color: black;
