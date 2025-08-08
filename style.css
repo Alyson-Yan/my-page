@@ -24,6 +24,7 @@ canvas {
     width: 80%; /* Ajuste o tamanho conforme necessário */
     max-width: 1200px;
     z-index: 1; /* Garante que o conteúdo fique acima do canvas */
+    text-align: center;
 }
 
 /* Estilo do menu fixo no topo */
@@ -61,7 +62,11 @@ nav a:hover {
 }
 
 main {
-    margin-top: 50px;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .foto {

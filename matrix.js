@@ -10,7 +10,7 @@ function efeitoMatrix(neo) {
         var ctx = neo.getContext('2d');
         
         // Fundo Preto e transparência em .05
-        ctx.fillStyle = 'rgba(0,0,0,.05)';
+        ctx.fillStyle = 'rgba(0, 0, 0, 1)';
         ctx.fillRect(0, 0, largura, altura);
         
         // Letras verdes
