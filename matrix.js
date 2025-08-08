@@ -1,33 +1,41 @@
-// Função para gerar um número aleatório dentro de um intervalo
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+function efeitoMatrix(neo) {
+    // Variáveis globais
+    var tela = window.screen;
+    var largura = neo.width = tela.width;
+    var altura = neo.height = tela.height;
+    var letras = Array(256).join(1).split('');
+    
+    // Desenha o efeito matrix na tela
+    var desenhaMatrix = function () {
+        var ctx = neo.getContext('2d');
+        
+        // Fundo Preto e transparência em .05
+        ctx.fillStyle = 'rgba(0,0,0,.05)';
+        ctx.fillRect(0, 0, largura, altura);
 
-// Função para criar e adicionar uma coluna à "matrix"
-function createMatrixColumn(index, container) {
-    const column = document.createElement('div');
-    column.classList.add('column');
-    column.style.left = `${index * 20}px`; // Posiciona a coluna horizontalmente
-    column.innerText = '0'; // Inicializa com '0'
+        // Letras verdes
+        ctx.fillStyle = '#0F0';
 
-    // Adiciona a coluna ao container
-    container.appendChild(column);
+        // Desenha as letras em cada coluna
+        letras.map(function (posicao_y, index) {
+            var texto = String.fromCharCode(48 + Math.random() * 33);
+            var posicao_x = index * 10;
+            ctx.fillText(texto, posicao_x, posicao_y);
 
-    // Definir um delay aleatório para a animação de cada coluna
-    const animationDelay = getRandomInt(1, 5) + 's';
-    column.style.animationDelay = animationDelay;
-}
-
-// Função para inicializar o efeito Matrix
-function startMatrixEffect() {
-    const matrixContainer = document.getElementById('matrix');
-    const numColumns = Math.floor(window.innerWidth / 20); // Número de colunas baseado na largura da tela
-
-    // Cria as colunas dinamicamente
-    for (let i = 0; i < numColumns; i++) {
-        createMatrixColumn(i, matrixContainer);
+            // Movimenta as letras para baixo, reinicia a coluna quando chega ao final
+            letras[index] = (posicao_y > altura + Math.random() * 1e4) ? 0 : posicao_y + 10;
+        });
     }
+
+    // Inicia a animação do efeito
+    setInterval(desenhaMatrix, 60);
 }
 
-// Função para iniciar o efeito após o carregamento da página
-window.onload = startMatrixEffect;
+// Função de carregar a página e passar o id do canvas para a função
+function carregar() {
+    var canvas = document.getElementById('canvas');
+    efeitoMatrix(canvas);
+}
+
+// Chama a função carregar quando a página estiver pronta
+window.onload = carregar;
