@@ -1,8 +1,7 @@
 function efeitoMatrix(neo) {
     // Variáveis globais
-    var tela = window.screen;
-    var largura = neo.width = tela.width;
-    var altura = neo.height = tela.height;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
     var letras = Array(256).join(1).split('');
     
     // Ajuste para desenhar o efeito nas bordas (margens)
