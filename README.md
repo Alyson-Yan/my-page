@@ -30,7 +30,7 @@ Este site foi desenvolvido como um **projeto pessoal e portfólio**, com o objet
 ## 📁 Estrutura do repositório
 
 
-![Preview do site](assets/img/paginicial.png)
+![Preview do site](./assets/img/paginicial.png)
 
 
 🧩 Melhorias futuras
