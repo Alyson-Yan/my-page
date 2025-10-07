@@ -40,4 +40,4 @@ Este site foi desenvolvido como um **projeto pessoal e portfólio**, com o objet
 
 Yan Fernandes
 🎮 Geek, desenvolvedor e praticante de jiu-jitsu.
-📫 Contato: [text](https://www.linkedin.com/in/alyson-yan-sampaio-fernandes-92b78235b)
+📫 Contato: (https://www.linkedin.com/in/alyson-yan-sampaio-fernandes-92b78235b)
