@@ -29,9 +29,9 @@ Este site foi desenvolvido como um **projeto pessoal e portfólio**, com o objet
 
 ## 📁 Estrutura do repositório
 
-
-![Preview do site](assets/img/paginicial.png)
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Alyson-Yan/my-page/main/assets/img/paginicial.png" alt="Preview do site" width="600">
+</p>
 
 🧩 Melhorias futuras
 
