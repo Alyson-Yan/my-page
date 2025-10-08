@@ -28,14 +28,6 @@ Este site foi desenvolvido como um **projeto pessoal e portfólio**, com o objet
 ---
 
 
-🧩 Melhorias futuras
-
- Otimizar imagens para WebP;
-
- Adicionar responsividade completa;
-
- Implementar animações suaves no scroll;
-
 🧑‍💻 Autor
 
 Yan Fernandes
