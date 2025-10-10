@@ -1,58 +1,58 @@
-function efeitoMatrix(neo) {
-    // Inicializa o tamanho do canvas
-    var largura = neo.width = window.innerWidth;
-    var altura = neo.height = window.innerHeight;
+    // MATRIX EFFECT — versão otimizada por GPT-5
+    (() => {
+    // Cria o canvas
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
 
-    // Array que controla a posição vertical de cada coluna de letras
-    var letras = Array(256).join(1).split('');
+    // Define tamanho inicial
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
 
-    // Função que desenha o efeito Matrix
-    function desenhaMatrix() {
-        var ctx = neo.getContext('2d');
+    // Configura fonte e colunas
+    const fontSize = 16;
+    const columns = Math.floor(width / fontSize);
+    const drops = Array(columns).fill(1);
 
-        // Fundo preto
-        ctx.fillStyle = 'rgba(0, 0, 0, 1)';
-        ctx.fillRect(0, 0, largura, altura);
+    // Função principal de desenho
+    function draw() {
+        // Fundo translúcido (para o rastro)
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+        ctx.fillRect(0, 0, width, height);
 
-        // Letras verdes
         ctx.fillStyle = '#0F0';
+        ctx.font = fontSize + 'px monospace';
 
-        letras.map(function(posicao_y, index) {
-            var texto = String.fromCharCode(48 + Math.random() * 33); // caracteres aleatórios
-            var posicao_x = index * 10;
+        // Desenha letras em cada coluna
+        for (let i = 0; i < drops.length; i++) {
+        const text = String.fromCharCode(0x30A0 + Math.random() * 96);
+        const x = i * fontSize;
+        const y = drops[i] * fontSize;
 
-            // Bordas esquerda
-            if (posicao_x < 100) ctx.fillText(texto, posicao_x, posicao_y);
+        ctx.fillText(text, x, y);
 
-            // Bordas direita
-            if (posicao_x > largura - 100) ctx.fillText(texto, posicao_x, posicao_y);
+        // Reinicia a coluna ao fim da tela, aleatoriamente
+        if (y > height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+        }
 
-            // Bordas superior e inferior
-            if (posicao_y < 100 || posicao_y > altura - 100) ctx.fillText(texto, posicao_x, posicao_y);
-
-            // Atualiza posição vertical da letra
-            letras[index] = (posicao_y > altura + Math.random() * 1e4) ? 0 : posicao_y + 10;
-        });
+        // Chama o próximo frame
+        requestAnimationFrame(draw);
     }
 
-    // Inicia a animação
-    var animacao = setInterval(desenhaMatrix, 60);
+    // Redimensiona dinamicamente
+    function resizeCanvas() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+    }
 
-    // Função para ajustar canvas ao redimensionar a tela
-    window.addEventListener('resize', function() {
-        largura = neo.width = window.innerWidth;
-        altura = neo.height = window.innerHeight;
-
-        // Reinicializa posições das letras
-        letras = Array(256).join(1).split('');
+    window.addEventListener('resize', () => {
+        resizeCanvas();
     });
-}
 
-// Função de inicialização ao carregar a página
-function carregar() {
-    var canvas = document.getElementById('canvas'); // ID do canvas no HTML
-    efeitoMatrix(canvas);
-}
-
-// Chama a função carregar quando a página estiver pronta
-window.onload = carregar;
+    // Inicia a animação
+    draw();
+    })();
