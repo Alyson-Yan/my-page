@@ -65,15 +65,16 @@
 
     /* ====== CAIXA PRETA SÓLIDA ====== */
     .caixa {
-    background-color: #000; /* preto sólido */
-    border: 1px solid #00ff00; /* borda verde simples */
-    border-radius: 10px;
-    padding: 40px;
-    max-width: 800px;
-    width: 90%;
-    text-align: center;
-    box-shadow: none; /* remove qualquer brilho */
+        background-color: #000; /* preto sólido */
+        border: none; /* remove a borda verde */
+        border-radius: 0; /* remove cantos arredondados */
+        padding: 40px;
+        max-width: 800px;
+        width: 90%;
+        text-align: center;
+        box-shadow: none; /* garante sem brilho */
     }
+
 
     /* ====== FOTO ====== */
     .foto {
