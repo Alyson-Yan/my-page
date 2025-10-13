@@ -1,47 +1,43 @@
-    // MATRIX EFFECT — versão otimizada por GPT-5
-    (() => {
-    // Cria o canvas
-    const canvas = document.getElementById('canvas');
+// MATRIX EFFECT — versão adaptada GPT-5
+(() => {
+    const canvas = document.getElementById('matrixCanvas'); // id atualizado
     const ctx = canvas.getContext('2d');
 
-    // Define tamanho inicial
     let width = window.innerWidth;
     let height = window.innerHeight;
     canvas.width = width;
     canvas.height = height;
 
-    // Configura fonte e colunas
     const fontSize = 16;
     const columns = Math.floor(width / fontSize);
     const drops = Array(columns).fill(1);
 
-    // Função principal de desenho
     function draw() {
-        // Fundo translúcido (para o rastro)
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // rastro
         ctx.fillRect(0, 0, width, height);
 
         ctx.fillStyle = '#0F0';
         ctx.font = fontSize + 'px monospace';
 
-        // Desenha letras em cada coluna
+        const centerWidth = width * 0.8;
+        const leftBoundary = (width - centerWidth) / 2;
+        const rightBoundary = leftBoundary + centerWidth;
+
         for (let i = 0; i < drops.length; i++) {
-        const text = String.fromCharCode(0x30A0 + Math.random() * 96);
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
+            const x = i * fontSize;
+            if (x < leftBoundary || x > rightBoundary) { // só desenha nas laterais
+                const text = String.fromCharCode(0x30A0 + Math.random() * 96);
+                const y = drops[i] * fontSize;
+                ctx.fillText(text, x, y);
 
-        ctx.fillText(text, x, y);
-
-        // Reinicia a coluna ao fim da tela, aleatoriamente
-        if (y > height && Math.random() > 0.975) drops[i] = 0;
-        drops[i]++;
+                if (y > height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
         }
 
-        // Chama o próximo frame
         requestAnimationFrame(draw);
     }
 
-    // Redimensiona dinamicamente
     function resizeCanvas() {
         width = window.innerWidth;
         height = window.innerHeight;
@@ -49,10 +45,6 @@
         canvas.height = height;
     }
 
-    window.addEventListener('resize', () => {
-        resizeCanvas();
-    });
-
-    // Inicia a animação
+    window.addEventListener('resize', resizeCanvas);
     draw();
-    })();
+})();

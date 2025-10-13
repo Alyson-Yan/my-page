@@ -1,32 +1,132 @@
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alyson Yan — Dev em Construção</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="icon" type="image/png" href="./assets/img/favicon-32x32.png">
-    </head>
-    <body>
-    <canvas id="canvas"></canvas>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alyson Yan — Dev em Construção</title>
+<link rel="stylesheet" href="./assets/css/style.css">
+<link rel="icon" type="image/png" href="./assets/img/favicon-32x32.png">
+<style>
+  /* Reset básico */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <nav>
-        <ul>
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    background: black;
+    font-family: monospace;
+  }
+
+  /* Canvas ocupa todo o fundo */
+  #matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  /* Conteúdo central */
+  .content {
+    position: relative;
+    z-index: 1;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(0,0,0,1); /* fundo preto */
+    color: lime;
+    padding: 20px;
+  }
+
+  .caixa {
+    text-align: center;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin: 20px 0;
+    z-index: 1;
+    position: relative;
+  }
+
+  nav a {
+    color: lime;
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="matrixCanvas"></canvas>
+
+<nav>
+    <ul>
         <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="contato.html">Contato</a></li>
-        </ul>
-    </nav>
+    </ul>
+</nav>
 
-    <main class="content">
-        <div class="caixa">
+<main class="content">
+    <div class="caixa">
         <img src="./assets/img/eu.jpg" alt="Foto de Alyson Yan" class="foto">
         <h1>Alyson Yan</h1>
         <h2>Desenvolvedor em Construção</h2>
         <p>Sou Alyson Yan, desenvolvedor de software com foco em soluções computacionais. Explore meu trabalho e entre em contato!</p>
-        </div>
-    </main>
+    </div>
+</main>
 
-    <script src="./assets/js/matrix.js" defer></script>
-    </body>
-    </html>
+<script>
+const canvas = document.getElementById('matrixCanvas');
+const ctx = canvas.getContext('2d');
+
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
+
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%';
+const fontSize = 16;
+const columns = Math.floor(width / fontSize);
+const drops = [];
+
+for (let x = 0; x < columns; x++) {
+    drops[x] = Math.floor(Math.random() * height / fontSize);
+}
+
+function drawMatrix() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = '#0F0';
+    ctx.font = fontSize + 'px monospace';
+
+    const centerWidth = width * 0.8;
+    const leftBoundary = (width - centerWidth) / 2;
+    const rightBoundary = leftBoundary + centerWidth;
+
+    for (let i = 0; i < drops.length; i++) {
+        const x = i * fontSize;
+        if (x < leftBoundary || x > rightBoundary) {
+            const text = letters[Math.floor(Math.random() * letters.length)];
+            ctx.fillText(text, x, drops[i] * fontSize);
+            drops[i]++;
+            if (drops[i] * fontSize > height) drops[i] = 0;
+        }
+    }
+}
+
+setInterval(drawMatrix, 50);
+
+window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>
