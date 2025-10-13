@@ -1,6 +1,6 @@
 // MATRIX EFFECT — versão adaptada GPT-5
 (() => {
-    const canvas = document.getElementById('matrixCanvas'); // id atualizado
+    const canvas = document.getElementById('matrixCanvas');
     const ctx = canvas.getContext('2d');
 
     let width = window.innerWidth;
@@ -9,11 +9,11 @@
     canvas.height = height;
 
     const fontSize = 16;
-    const columns = Math.floor(width / fontSize);
-    const drops = Array(columns).fill(1);
+    let columns = Math.floor(width / fontSize);
+    let drops = Array(columns).fill(1);
 
     function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; // rastro
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
         ctx.fillRect(0, 0, width, height);
 
         ctx.fillStyle = '#0F0';
@@ -25,7 +25,7 @@
 
         for (let i = 0; i < drops.length; i++) {
             const x = i * fontSize;
-            if (x < leftBoundary || x > rightBoundary) { // só desenha nas laterais
+            if (x < leftBoundary || x > rightBoundary) {
                 const text = String.fromCharCode(0x30A0 + Math.random() * 96);
                 const y = drops[i] * fontSize;
                 ctx.fillText(text, x, y);
@@ -43,6 +43,8 @@
         height = window.innerHeight;
         canvas.width = width;
         canvas.height = height;
+        columns = Math.floor(width / fontSize);
+        drops = Array(columns).fill(1);
     }
 
     window.addEventListener('resize', resizeCanvas);
