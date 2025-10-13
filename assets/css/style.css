@@ -94,4 +94,61 @@
 
     h2 {
     font-size: 1.5em;
+    color: #00ff00;
+    }
+
+    p {
+    font-size: 18px;
+    line-height: 1.5;
+    }
+
+    /* ====== LINKS DA PÁGINA DE CONTATO ====== */
+    main ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    }
+
+    main ul li {
+    margin: 10px 0;
+    }
+
+    main ul a {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 18px;
+    }
+
+    main ul a:hover {
+    color: #00cc00;
+    text-decoration: underline;
+    }
+
+    /* ====== RESPONSIVIDADE ====== */
+    @media (max-width: 768px) {
+    .caixa {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .foto {
+        width: 150px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 16px;
+    }
     }
