@@ -1,144 +1,111 @@
-    /* ====== ESTILO GERAL ====== */
-    body {
-    background-color: black;
-    color: #00ff00;
-    font-family: 'Courier New', monospace;
+/* ====== ESTILO GERAL ====== */
+body {
     margin: 0;
     padding: 0;
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
     overflow-x: hidden;
-    }
+}
 
-    /* ====== CANVAS (EFEITO MATRIX) ====== */
-    canvas {
+/* ====== CONTAINER PRINCIPAL ====== */
+main {
+    position: relative;
+    z-index: 2;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* ====== EFEITO MATRIX NAS LATERAIS ====== */
+canvas#matrix {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
     z-index: 0;
-    }
+    pointer-events: none;
+    opacity: 0.25;
+}
 
-    /* ====== MENU FIXO ====== */
-    nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #00ff00;
-    padding: 10px 0;
+/* ====== NAVEGAÇÃO ====== */
+nav {
     text-align: center;
-    z-index: 2;
-    }
-
-    nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: inline-flex;
-    gap: 20px;
-    }
-
-    nav a {
-    text-decoration: none;
-    color: #00ff00;
-    font-size: 18px;
-    transition: color 0.2s;
-    }
-
-    nav a:hover {
-    color: #00cc00;
-    text-decoration: underline;
-    }
-
-    /* ====== CONTEÚDO PRINCIPAL ====== */
-    .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    padding-top: 60px; /* espaço para o menu */
-    position: relative;
-    z-index: 1; /* acima do canvas */
-    }
-
-    /* ====== CAIXA PRETA SÓLIDA ====== */
-    .caixa {
-        background-color: #000; /* preto sólido */
-        border: none; /* remove a borda verde */
-        border-radius: 0; /* remove cantos arredondados */
-        padding: 40px;
-        max-width: 800px;
-        width: 90%;
-        text-align: center;
-        box-shadow: none; /* garante sem brilho */
-    }
-
-
-    /* ====== FOTO ====== */
-    .foto {
-    width: 200px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    border: 2px solid #00ff00;
-    }
-
-    /* ====== TIPOGRAFIA ====== */
-    h1, h2 {
-    margin: 10px 0;
-    }
-
-    h1 {
-    font-size: 2em;
-    }
-
-    h2 {
-    font-size: 1.5em;
-    color: #00ff00;
-    }
-
-    p {
-    font-size: 18px;
-    line-height: 1.5;
-    }
-
-    /* ====== LINKS DA PÁGINA DE CONTATO ====== */
-    main ul {
-    list-style: none;
-    padding: 0;
     margin-top: 20px;
-    }
+    z-index: 3;
+    position: relative;
+}
 
-    main ul li {
-    margin: 10px 0;
-    }
-
-    main ul a {
+nav a {
     color: #00ff00;
     text-decoration: none;
-    font-size: 18px;
-    }
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
 
-    main ul a:hover {
-    color: #00cc00;
-    text-decoration: underline;
-    }
+nav a:hover {
+    color: #ffffff;
+}
 
-    /* ====== RESPONSIVIDADE ====== */
-    @media (max-width: 768px) {
-    .caixa {
+/* ====== CAIXA DE CONTEÚDO ====== */
+.caixa {
+    background-color: #000; /* preto sólido */
+    border: none; /* sem borda */
+    border-radius: 0; /* sem cantos arredondados */
+    padding: 40px;
+    max-width: 800px;
+    width: 90%;
+    text-align: center;
+    box-shadow: none;
+    margin: 40px auto;
+    z-index: 2;
+    position: relative;
+}
+
+/* ====== IMAGENS ====== */
+.caixa img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* ====== TEXTOS ====== */
+h1, h2, p {
+    color: #00ff00;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6em;
+}
+
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 768px) {
+    main {
         width: 95%;
         padding: 20px;
     }
 
-    .foto {
-        width: 150px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+    .caixa {
+        padding: 20px;
     }
 
     h1 {
@@ -146,10 +113,14 @@
     }
 
     h2 {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     p {
-        font-size: 16px;
+        font-size: 1em;
     }
+
+    .caixa img {
+        width: 150px;
     }
+}
