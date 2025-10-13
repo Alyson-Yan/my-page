@@ -1,3 +1,4 @@
+    /* ====== ESTILO GERAL ====== */
     body {
     background-color: black;
     color: #00ff00;
@@ -7,7 +8,7 @@
     overflow-x: hidden;
     }
 
-    /* Canvas do efeito Matrix no fundo */
+    /* ====== CANVAS (EFEITO MATRIX) ====== */
     canvas {
     position: fixed;
     top: 0;
@@ -18,7 +19,7 @@
     z-index: 0;
     }
 
-    /* Menu fixo */
+    /* ====== MENU FIXO ====== */
     nav {
     position: fixed;
     top: 0;
@@ -51,7 +52,7 @@
     text-decoration: underline;
     }
 
-    /* Área central (main) */
+    /* ====== CONTEÚDO PRINCIPAL ====== */
     .content {
     display: flex;
     justify-content: center;
@@ -62,19 +63,19 @@
     z-index: 1; /* acima do canvas */
     }
 
-    /* Caixa preta translúcida sobre o efeito */
+    /* ====== CAIXA PRETA SÓLIDA ====== */
     .caixa {
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 2px solid #00ff00;
-    border-radius: 20px;
+    background-color: #000; /* preto sólido */
+    border: 1px solid #00ff00; /* borda verde simples */
+    border-radius: 10px;
     padding: 40px;
     max-width: 800px;
     width: 90%;
     text-align: center;
-    box-shadow: 0 0 20px #00ff00aa;
+    box-shadow: none; /* remove qualquer brilho */
     }
 
-    /* Foto */
+    /* ====== FOTO ====== */
     .foto {
     width: 200px;
     border-radius: 20px;
@@ -82,29 +83,15 @@
     border: 2px solid #00ff00;
     }
 
-    /* Tipografia */
+    /* ====== TIPOGRAFIA ====== */
     h1, h2 {
     margin: 10px 0;
     }
 
-    p {
-    font-size: 18px;
-    line-height: 1.5;
+    h1 {
+    font-size: 2em;
     }
 
-    /* Responsividade */
-    @media (max-width: 768px) {
-    .caixa {
-        width: 95%;
-        padding: 20px;
-    }
-
-    .foto {
-        width: 150px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
+    h2 {
+    font-size: 1.5em;
     }
