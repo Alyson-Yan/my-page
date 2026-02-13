@@ -31,5 +31,5 @@ Este site foi desenvolvido como um **projeto pessoal e portfólio**, com o objet
 🧑‍💻 Autor
 
 Yan Fernandes
-🎮 Geek, desenvolvedor e praticante de jiu-jitsu.
+🎮 Geek, desenvolvedor, bacharel em ciência da comutação.
 📫 Contato: (https://www.linkedin.com/in/alyson-yan-sampaio-fernandes-92b78235b)
