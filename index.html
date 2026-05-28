@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alyson Yan — Dev em Construção</title>
-<link rel="stylesheet" href="./assets/css/style.css">
-<link rel="icon" type="image/png" href="./assets/img/favicon-32x32.png">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alyson Yan | Portfólio React</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" type="image/png" href="./assets/img/favicon-32x32.png">
 </head>
 <body>
+    <canvas id="matrixCanvas"></canvas>
 
-<canvas id="matrixCanvas"></canvas>
+    <div id="root"></div>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="contato.html">Contato</a></li>
-    </ul>
-</nav>
+    <noscript>
+        <main class="content">
+            <div class="caixa">
+                <h1>Alyson Yan</h1>
+                <p>Ative o JavaScript para visualizar o portfólio em React.</p>
+            </div>
+        </main>
+    </noscript>
 
-<main class="content">
-    <div class="caixa">
-        <img src="./assets/img/eu.jpg" alt="Foto de Alyson Yan" class="foto">
-        <h1>Alyson Yan</h1>
-        <h2>Desenvolvedor em Construção</h2>
-        <p>Sou Alyson Yan, desenvolvedor de software com foco em soluções computacionais. Explore meu trabalho e entre em contato!</p>
-    </div>
-</main>
-
-<script src="./assets/js/matrix.js" defer></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin defer></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin defer></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" defer></script>
+    <script src="./assets/js/matrix.js" defer></script>
+    <script type="text/babel" src="./assets/js/App.jsx" data-presets="env,react" defer></script>
 </body>
 </html>
