@@ -1,0 +1,56 @@
+:root {
+    --royal-blue: rgb(65, 105, 225);
+    --royal-blue-soft: rgba(65, 105, 225, 0.35);
+    --royal-blue-glow: rgba(65, 105, 225, 0.18);
+}
+
+html,
+body,
+nav a,
+.navbar a,
+.contato a,
+.content,
+ul li a {
+    color: var(--royal-blue) !important;
+}
+
+nav,
+.navbar,
+main,
+.content,
+.caixa,
+.card-projeto,
+.status,
+.tecnologias span,
+.caixa img,
+.foto {
+    border-color: var(--royal-blue-soft) !important;
+}
+
+nav a:hover,
+.navbar a:hover,
+.contato a:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 8px var(--royal-blue) !important;
+}
+
+main,
+.content,
+.card-projeto,
+.caixa img,
+.foto {
+    box-shadow: 0 0 18px var(--royal-blue-glow) !important;
+}
+
+.status {
+    background: var(--royal-blue) !important;
+}
+
+.subtitulo,
+.tecnologias span {
+    color: #b8c7ff !important;
+}
+
+#matrixCanvas {
+    filter: hue-rotate(105deg) saturate(140%) !important;
+}
