@@ -1,7 +1,7 @@
 :root {
-    --royal-blue: rgb(65, 105, 225);
-    --royal-blue-soft: rgba(65, 105, 225, 0.35);
-    --royal-blue-glow: rgba(65, 105, 225, 0.18);
+    --royal-blue: rgb(0, 102, 255);
+    --royal-blue-soft: rgba(0, 102, 255, 0.45);
+    --royal-blue-glow: rgba(0, 102, 255, 0.32);
 }
 
 html,
@@ -31,7 +31,7 @@ nav a:hover,
 .navbar a:hover,
 .contato a:hover {
     color: #ffffff !important;
-    text-shadow: 0 0 8px var(--royal-blue) !important;
+    text-shadow: 0 0 10px var(--royal-blue) !important;
 }
 
 main,
@@ -39,7 +39,7 @@ main,
 .card-projeto,
 .caixa img,
 .foto {
-    box-shadow: 0 0 18px var(--royal-blue-glow) !important;
+    box-shadow: 0 0 22px var(--royal-blue-glow) !important;
 }
 
 .status {
@@ -48,9 +48,9 @@ main,
 
 .subtitulo,
 .tecnologias span {
-    color: #b8c7ff !important;
+    color: #a8c7ff !important;
 }
 
 #matrixCanvas {
-    filter: hue-rotate(105deg) saturate(140%) !important;
+    filter: hue-rotate(110deg) saturate(190%) brightness(115%) !important;
 }
