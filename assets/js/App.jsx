@@ -1,109 +1,114 @@
-const techServices = [
-  'Manutenção, formatação e diagnóstico de computadores e notebooks',
-  'Suporte para redes, impressoras, programas e organização digital',
-  'Criação de páginas, automações, planilhas inteligentes e sistemas simples'
+const servicos = [
+  {
+    area: 'Tecnologia',
+    titulo: 'Assistência técnica e soluções digitais',
+    texto: 'Suporte para computadores, notebooks, redes, impressoras, formatação, instalação de programas, organização digital e criação de soluções simples para rotina de trabalho.',
+    itens: ['Manutenção e diagnóstico', 'Suporte a usuários', 'Sites, automações e planilhas']
+  },
+  {
+    area: 'Eventos',
+    titulo: 'Personagem e presença temática',
+    texto: 'Atuação em eventos, aniversários e ações especiais com presença visual marcante, interação com convidados e experiência temática organizada.',
+    itens: ['Entrada temática', 'Fotos e interação', 'Ações personalizadas']
+  }
 ];
 
-const eventServices = [
-  'Presença de personagem para eventos familiares e temáticos',
-  'Fotos, interação com convidados e entrada temática',
-  'Ações personalizadas para aniversários, comemorações e encontros geek'
+const processos = [
+  ['01', 'Entendimento', 'Alinho a necessidade, o tipo de serviço e o objetivo do atendimento.'],
+  ['02', 'Proposta', 'Organizo o melhor caminho, explico o que será feito e combino os detalhes.'],
+  ['03', 'Execução', 'Realizo o serviço com foco em clareza, cuidado e entrega prática.'],
+  ['04', 'Entrega', 'Finalizo com orientação, próximos passos e contato aberto para dúvidas.']
 ];
 
 const projetos = [
   {
     titulo: 'Conciliador Bancário',
-    descricao: 'Sistema para comparar arquivos de ERP com relatórios bancários, encontrar divergências e organizar registros financeiros.',
-    tecnologias: ['Python', 'Pandas', 'FastAPI', 'JavaScript']
+    texto: 'Sistema para comparar arquivos de ERP com relatórios bancários e encontrar divergências financeiras.',
+    stack: ['Python', 'Pandas', 'FastAPI']
   },
   {
     titulo: 'Controle de EPIs',
-    descricao: 'Aplicação para controle de entregas, estoque, responsáveis e assinaturas usando AppSheet e Google Sheets.',
-    tecnologias: ['AppSheet', 'Google Sheets', 'Automação']
+    texto: 'Aplicação para controlar entregas, estoque, responsáveis e assinaturas usando base em planilhas.',
+    stack: ['AppSheet', 'Google Sheets']
   },
   {
     titulo: 'Portfólio YF Services',
-    descricao: 'Página comercial para apresentar serviços de tecnologia, projetos e eventos em uma primeira impressão profissional.',
-    tecnologias: ['React', 'HTML', 'CSS', 'GitHub Pages']
+    texto: 'Landing page comercial para unir tecnologia, projetos e eventos em uma apresentação profissional.',
+    stack: ['React', 'HTML', 'CSS']
   }
 ];
 
-function Navbar() {
+function Header() {
   return (
-    <nav className="navbar">
-      <a className="brand" href="#inicio"><span>YF</span> Services</a>
-      <ul>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+    <header className="topbar">
+      <a href="#inicio" className="logo" aria-label="YF Services"><span>YF</span><strong>YF Services</strong></a>
+      <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#processo">Processo</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
   );
 }
 
 function Hero() {
   return (
-    <section id="inicio" className="hero">
-      <div className="hero-text">
-        <p className="tag">Tecnologia • Suporte • Eventos</p>
-        <h1>YF Services</h1>
-        <h2>Assistência tecnológica e eventos temáticos com uma apresentação profissional.</h2>
-        <p>Sou Alyson Yan, estudante de Ciência da Computação. Atuo com suporte, manutenção, projetos de tecnologia e presença temática em eventos.</p>
-        <div className="actions">
-          <a className="btn primary" href="#contato">Solicitar atendimento</a>
-          <a className="btn secondary" href="#projetos">Ver projetos</a>
+    <section id="inicio" className="hero section-shell">
+      <div className="hero-copy">
+        <p className="kicker">Tecnologia • Suporte • Eventos</p>
+        <h1>Tecnologia que resolve. Eventos que chamam atenção.</h1>
+        <p className="lead">Portfólio comercial de Alyson Yan para apresentar assistência tecnológica, projetos digitais e serviços temáticos com uma primeira impressão mais profissional.</p>
+        <div className="hero-buttons">
+          <a href="#contato" className="button button-primary">Pedir orçamento</a>
+          <a href="#portfolio" className="button button-ghost">Ver trabalhos</a>
+        </div>
+        <div className="mini-proof">
+          <span>Suporte técnico</span>
+          <span>Desenvolvimento web</span>
+          <span>Eventos temáticos</span>
         </div>
       </div>
-      <aside className="profile-card">
-        <img src="./assets/img/eu.jpg" alt="Foto de Alyson Yan" className="foto" />
-        <strong>Alyson Yan</strong>
-        <span>Ciência da Computação</span>
-        <p>Suporte técnico • Web • Automação • Eventos</p>
+
+      <aside className="hero-panel">
+        <div className="profile-header">
+          <img src="./assets/img/eu.jpg" alt="Foto de Alyson Yan" />
+          <div>
+            <strong>Alyson Yan</strong>
+            <span>Ciência da Computação</span>
+          </div>
+        </div>
+        <div className="panel-card destaque">
+          <small>Marca pessoal</small>
+          <strong>YF Services</strong>
+          <p>Uma ponte entre suporte técnico, soluções digitais e eventos temáticos.</p>
+        </div>
+        <div className="panel-grid">
+          <div><strong>TI</strong><span>Suporte e projetos</span></div>
+          <div><strong>Eventos</strong><span>Presença temática</span></div>
+        </div>
       </aside>
     </section>
   );
 }
 
-function ListaServicos({ titulo, itens }) {
+function Services() {
   return (
-    <article className="service-card">
-      <h3>{titulo}</h3>
-      <ul>
-        {itens.map((item) => <li key={item}>{item}</li>)}
-      </ul>
-    </article>
-  );
-}
-
-function Servicos() {
-  return (
-    <section id="servicos" className="secao">
-      <p className="tag">O que eu faço</p>
-      <h2>Duas frentes, uma marca</h2>
-      <p className="subtitulo">Uma vitrine clara para clientes de tecnologia, contratantes de eventos e recrutadores que chegam pelo GitHub.</p>
-      <div className="grid-servicos">
-        <ListaServicos titulo="Assistência tecnológica" itens={techServices} />
-        <ListaServicos titulo="Eventos e personagem" itens={eventServices} />
+    <section id="servicos" className="section-shell services-section">
+      <div className="section-title">
+        <p className="kicker">Serviços</p>
+        <h2>Uma apresentação clara para cliente, recrutador e contratante.</h2>
+        <p>O site precisa mostrar rápido o que você faz, por que isso tem valor e como entrar em contato.</p>
       </div>
-    </section>
-  );
-}
-
-function Projetos() {
-  return (
-    <section id="projetos" className="secao">
-      <p className="tag">Projetos</p>
-      <h2>Provas práticas de trabalho</h2>
-      <div className="grid-projetos">
-        {projetos.map((projeto) => (
-          <article className="card-projeto" key={projeto.titulo}>
-            <span className="status">Projeto</span>
-            <h3>{projeto.titulo}</h3>
-            <p>{projeto.descricao}</p>
-            <div className="tecnologias">
-              {projeto.tecnologias.map((tec) => <span key={tec}>{tec}</span>)}
-            </div>
+      <div className="service-grid">
+        {servicos.map((servico) => (
+          <article className="service-card" key={servico.area}>
+            <span>{servico.area}</span>
+            <h3>{servico.titulo}</h3>
+            <p>{servico.texto}</p>
+            <ul>
+              {servico.itens.map((item) => <li key={item}>{item}</li>)}
+            </ul>
           </article>
         ))}
       </div>
@@ -111,32 +116,69 @@ function Projetos() {
   );
 }
 
-function Sobre() {
+function Processo() {
   return (
-    <section id="sobre" className="secao sobre">
-      <p className="tag">Sobre</p>
-      <h2>Perfil técnico com comunicação direta</h2>
-      <p>Trabalho com tecnologia na prática: suporte, hardware, programação, automação e organização de processos. Também atuo em eventos, o que fortalece minha comunicação, presença e responsabilidade com pessoas.</p>
-      <div className="highlights">
-        <span>Suporte técnico</span>
-        <span>Desenvolvimento web</span>
-        <span>Automação</span>
-        <span>Eventos temáticos</span>
+    <section id="processo" className="section-shell process-section">
+      <div className="section-title compact">
+        <p className="kicker">Como funciona</p>
+        <h2>Processo simples, direto e profissional.</h2>
+      </div>
+      <div className="process-grid">
+        {processos.map(([numero, titulo, texto]) => (
+          <article className="process-card" key={numero}>
+            <span>{numero}</span>
+            <h3>{titulo}</h3>
+            <p>{texto}</p>
+          </article>
+        ))}
       </div>
     </section>
   );
 }
 
-function Contato() {
+function Portfolio() {
   return (
-    <section id="contato" className="secao contato">
-      <p className="tag">Contato</p>
-      <h2>Vamos conversar?</h2>
-      <p className="subtitulo">Conheça meus projetos ou chame para assistência tecnológica e eventos.</p>
-      <div className="contato-links">
-        <a href="https://github.com/Alyson-Yan" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/alyson-yan-sampaio-fernandes-92b78235b" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="mailto:alyson.cienciacomp@gmail.com">E-mail</a>
+    <section id="portfolio" className="section-shell portfolio-section">
+      <div className="section-title">
+        <p className="kicker">Portfólio</p>
+        <h2>Projetos que mostram prática além do discurso.</h2>
+        <p>Esses trabalhos ajudam a provar domínio técnico, organização e capacidade de transformar problemas reais em solução.</p>
+      </div>
+      <div className="portfolio-grid">
+        {projetos.map((projeto) => (
+          <article className="project-card" key={projeto.titulo}>
+            <h3>{projeto.titulo}</h3>
+            <p>{projeto.texto}</p>
+            <div>{projeto.stack.map((tech) => <span key={tech}>{tech}</span>)}</div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function About() {
+  return (
+    <section className="about-strip section-shell">
+      <div>
+        <p className="kicker">Sobre mim</p>
+        <h2>Perfil técnico com comunicação de serviço.</h2>
+      </div>
+      <p>Sou estudante de Ciência da Computação e atuo com suporte, hardware, programação, automação e eventos. A YF Services organiza essas frentes em uma marca mais fácil de entender, contratar e apresentar no currículo.</p>
+    </section>
+  );
+}
+
+function Contact() {
+  return (
+    <section id="contato" className="contact section-shell">
+      <p className="kicker">Contato</p>
+      <h2>Precisa de suporte, uma solução digital ou um evento temático?</h2>
+      <p>Entre em contato pelos links abaixo e veja também meus projetos no GitHub.</p>
+      <div className="contact-links">
+        <a href="mailto:alyson.cienciacomp@gmail.com" className="button button-primary">Enviar e-mail</a>
+        <a href="https://github.com/Alyson-Yan" target="_blank" rel="noreferrer" className="button button-ghost">GitHub</a>
+        <a href="https://www.linkedin.com/in/alyson-yan-sampaio-fernandes-92b78235b" target="_blank" rel="noreferrer" className="button button-ghost">LinkedIn</a>
       </div>
     </section>
   );
@@ -145,13 +187,14 @@ function Contato() {
 function App() {
   return (
     <>
-      <Navbar />
-      <main className="content">
+      <Header />
+      <main>
         <Hero />
-        <Servicos />
-        <Projetos />
-        <Sobre />
-        <Contato />
+        <Services />
+        <Processo />
+        <Portfolio />
+        <About />
+        <Contact />
       </main>
     </>
   );
