@@ -5,8 +5,17 @@ const slides = [
     subtitulo: 'Manutenção, diagnóstico e suporte para deixar o equipamento pronto para uso.',
     texto: 'Atendimento para computadores e notebooks com foco em resolver problemas de desempenho, instalação de programas, formatação, limpeza, organização e suporte básico para o dia a dia.',
     visual: 'YF TECH',
-    etiqueta: 'Suporte técnico',
+    etiqueta: 'Tecnologia',
     pontos: ['Diagnóstico do problema', 'Manutenção preventiva', 'Orientação após o serviço']
+  },
+  {
+    categoria: 'Eventos infantis',
+    titulo: 'Personagem para festas infantis',
+    subtitulo: 'Presença temática para deixar o aniversário mais divertido, visual e memorável.',
+    texto: 'Atuação com personagem em festas infantis e eventos familiares, com entrada temática, interação com convidados, fotos e presença animada durante o evento.',
+    visual: 'FESTAS',
+    etiqueta: 'Eventos infantis',
+    pontos: ['Entrada do personagem', 'Fotos com convidados', 'Interação com as crianças']
   },
   {
     categoria: 'Tecnologia',
@@ -18,35 +27,28 @@ const slides = [
     pontos: ['Páginas web', 'Automações com Python', 'Organização de dados']
   },
   {
-    categoria: 'Eventos',
-    titulo: 'Eventos temáticos com personagem',
-    subtitulo: 'Presença visual marcante para fotos, interação e momentos especiais.',
-    texto: 'Serviço voltado para eventos familiares, aniversários e ações temáticas. A proposta é criar uma experiência divertida, organizada e com boa presença visual para os convidados.',
-    visual: 'EVENTOS',
-    etiqueta: 'Eventos',
-    pontos: ['Entrada temática', 'Fotos com convidados', 'Interação durante o evento']
-  },
-  {
-    categoria: 'Portfólio',
-    titulo: 'Projetos reais em tecnologia',
-    subtitulo: 'Trabalhos que mostram prática, raciocínio técnico e capacidade de entrega.',
-    texto: 'Projetos como conciliador bancário, controle de EPIs, páginas comerciais e soluções internas ajudam a demonstrar experiência prática além do currículo.',
-    visual: 'PORTFÓLIO',
-    etiqueta: 'Projetos',
-    pontos: ['Conciliador bancário', 'Controle de EPIs', 'Portfólios e sistemas web']
+    categoria: 'Eventos infantis',
+    titulo: 'Experiência temática para eventos',
+    subtitulo: 'Um serviço pensado para fotos, interação, surpresa e presença de palco.',
+    texto: 'A proposta dos eventos é criar uma lembrança marcante para a festa, mantendo organização, cuidado com o público e uma apresentação visual forte.',
+    visual: 'HERÓI',
+    etiqueta: 'Animação',
+    pontos: ['Momentos para fotos', 'Participação personalizada', 'Energia de personagem']
   }
 ];
 
 const cardsServicos = [
   ['Assistência tecnológica', 'Formatação, manutenção, instalação de programas, suporte para redes, impressoras e organização digital.'],
   ['Projetos digitais', 'Sites, automações, planilhas inteligentes, sistemas simples e soluções para pequenos processos.'],
-  ['Eventos temáticos', 'Presença de personagem, fotos, interação e ações personalizadas para eventos e comemorações.']
+  ['Festas infantis', 'Presença de personagem, entrada temática, fotos, interação com convidados e momentos especiais.'],
+  ['Eventos personalizados', 'Ações temáticas para aniversários, comemorações, encontros geek e experiências familiares.']
 ];
 
 const projetos = [
-  ['Conciliador Bancário', 'Sistema para comparar arquivos de ERP com relatórios bancários e encontrar divergências financeiras.', 'Python • Pandas • FastAPI'],
-  ['Controle de EPIs', 'Aplicação para controlar entregas, estoque, responsáveis e assinaturas usando base em planilhas.', 'AppSheet • Google Sheets'],
-  ['YF Services', 'Página comercial para reunir tecnologia, suporte, projetos e eventos em uma apresentação profissional.', 'React • HTML • CSS']
+  ['Conciliador Bancário', 'Sistema para comparar arquivos de ERP com relatórios bancários e encontrar divergências financeiras.', 'Tecnologia'],
+  ['Controle de EPIs', 'Aplicação para controlar entregas, estoque, responsáveis e assinaturas usando base em planilhas.', 'Tecnologia'],
+  ['Animação com personagem', 'Trabalho com presença temática, interação, fotos e energia visual para eventos infantis e familiares.', 'Eventos'],
+  ['YF Services', 'Marca pessoal que reúne suporte tecnológico e eventos em uma apresentação comercial equilibrada.', 'Tecnologia + Eventos']
 ];
 
 function Header() {
@@ -117,8 +119,8 @@ function Servicos() {
     <section id="servicos" className="content-section">
       <div className="section-heading">
         <span>Serviços</span>
-        <h2>O que a YF Services entrega</h2>
-        <p>Uma marca para apresentar de forma clara seus trabalhos com tecnologia, suporte e eventos.</p>
+        <h2>Metade tecnologia. Metade eventos infantis.</h2>
+        <p>A YF Services funciona como uma marca com duas áreas: suporte e soluções digitais para quem precisa resolver problemas, e eventos temáticos para quem quer criar uma experiência marcante.</p>
       </div>
       <div className="cards-grid">
         {cardsServicos.map(([titulo, texto]) => (
@@ -137,8 +139,8 @@ function GaleriaProjetos() {
     <section id="galeria" className="content-section portfolio-section">
       <div className="section-heading">
         <span>Portfólio</span>
-        <h2>Projetos e trabalhos para primeira impressão</h2>
-        <p>Essa área funciona como vitrine para quem chega pelo currículo, pelo GitHub ou por indicação.</p>
+        <h2>Trabalhos técnicos e experiências de evento</h2>
+        <p>Essa área serve para mostrar tanto projetos de tecnologia quanto trabalhos com personagem, reforçando as duas frentes da marca.</p>
       </div>
       <div className="project-list">
         {projetos.map(([titulo, texto, stack]) => (
@@ -162,7 +164,7 @@ function Sobre() {
         <span>Sobre mim</span>
         <h2>Alyson Yan</h2>
       </div>
-      <p>Sou estudante de Ciência da Computação e trabalho com suporte, hardware, programação, automação e eventos. A ideia da YF Services é reunir essas frentes em uma apresentação comercial mais forte, mostrando competência técnica e presença profissional.</p>
+      <p>Sou estudante de Ciência da Computação, trabalho com suporte, hardware, programação e automação. Também atuo em eventos infantis com personagem, unindo presença visual, comunicação e cuidado com a experiência do público. A YF Services organiza essas duas frentes em uma marca comercial mais clara.</p>
     </section>
   );
 }
@@ -171,8 +173,8 @@ function Contato() {
   return (
     <section id="contato" className="contact-section">
       <span>Contato</span>
-      <h2>Quer contratar um serviço ou conhecer meus projetos?</h2>
-      <p>Use os links abaixo para entrar em contato, ver meu GitHub ou acessar meu perfil profissional.</p>
+      <h2>Precisa de tecnologia ou quer animar um evento infantil?</h2>
+      <p>Use os links abaixo para solicitar atendimento, ver meus projetos ou acessar meu perfil profissional.</p>
       <div className="contact-actions">
         <a href="mailto:alyson.cienciacomp@gmail.com">E-mail</a>
         <a href="https://github.com/Alyson-Yan" target="_blank" rel="noreferrer">GitHub</a>
