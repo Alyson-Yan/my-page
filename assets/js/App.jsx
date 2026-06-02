@@ -4,7 +4,7 @@ const slides = [
     titulo: 'Assistência técnica para computadores',
     subtitulo: 'Manutenção, diagnóstico e suporte para deixar o equipamento pronto para uso.',
     texto: 'Atendimento para computadores e notebooks com foco em resolver problemas de desempenho, instalação de programas, formatação, limpeza, organização e suporte básico para o dia a dia.',
-    imagem: './assets/img/eu.jpg',
+    visual: 'YF TECH',
     etiqueta: 'Suporte técnico',
     pontos: ['Diagnóstico do problema', 'Manutenção preventiva', 'Orientação após o serviço']
   },
@@ -13,7 +13,7 @@ const slides = [
     titulo: 'Soluções digitais e automações',
     subtitulo: 'Projetos simples para organizar processos, planilhas e rotinas repetitivas.',
     texto: 'Criação de páginas, sistemas pequenos, planilhas inteligentes e automações para transformar tarefas manuais em fluxos mais claros e organizados.',
-    imagem: './assets/img/eu.jpg',
+    visual: 'WEB AUTO',
     etiqueta: 'Projetos digitais',
     pontos: ['Páginas web', 'Automações com Python', 'Organização de dados']
   },
@@ -22,7 +22,7 @@ const slides = [
     titulo: 'Eventos temáticos com personagem',
     subtitulo: 'Presença visual marcante para fotos, interação e momentos especiais.',
     texto: 'Serviço voltado para eventos familiares, aniversários e ações temáticas. A proposta é criar uma experiência divertida, organizada e com boa presença visual para os convidados.',
-    imagem: './assets/img/eu.jpg',
+    visual: 'EVENTOS',
     etiqueta: 'Eventos',
     pontos: ['Entrada temática', 'Fotos com convidados', 'Interação durante o evento']
   },
@@ -31,7 +31,7 @@ const slides = [
     titulo: 'Projetos reais em tecnologia',
     subtitulo: 'Trabalhos que mostram prática, raciocínio técnico e capacidade de entrega.',
     texto: 'Projetos como conciliador bancário, controle de EPIs, páginas comerciais e soluções internas ajudam a demonstrar experiência prática além do currículo.',
-    imagem: './assets/img/eu.jpg',
+    visual: 'PORTFÓLIO',
     etiqueta: 'Projetos',
     pontos: ['Conciliador bancário', 'Controle de EPIs', 'Portfólios e sistemas web']
   }
@@ -85,7 +85,10 @@ function Showcase() {
       <button className="slide-btn slide-next" onClick={proximo} aria-label="Próximo slide">›</button>
 
       <div className="showcase-media">
-        <img src={slide.imagem} alt={slide.titulo} />
+        <div className="service-visual" aria-label={slide.titulo}>
+          <span>{slide.visual}</span>
+          <strong>YF</strong>
+        </div>
         <div className="photo-badge">{slide.etiqueta}</div>
       </div>
 
