@@ -1,56 +1,14 @@
 :root {
-    --royal-blue: rgb(0, 102, 255);
+    --royal-blue: #0066ff;
     --royal-blue-soft: rgba(0, 102, 255, 0.45);
     --royal-blue-glow: rgba(0, 102, 255, 0.32);
 }
 
-html,
-body,
-nav a,
-.navbar a,
-.contato a,
-.content,
-ul li a {
-    color: var(--royal-blue) !important;
-}
-
-nav,
-.navbar,
-main,
-.content,
-.caixa,
-.card-projeto,
-.status,
-.tecnologias span,
-.caixa img,
-.foto {
-    border-color: var(--royal-blue-soft) !important;
-}
-
-nav a:hover,
-.navbar a:hover,
-.contato a:hover {
-    color: #ffffff !important;
-    text-shadow: 0 0 10px var(--royal-blue) !important;
-}
-
-main,
-.content,
-.card-projeto,
-.caixa img,
-.foto {
-    box-shadow: 0 0 22px var(--royal-blue-glow) !important;
-}
-
-.status {
-    background: var(--royal-blue) !important;
-}
-
-.subtitulo,
-.tecnologias span {
-    color: #a8c7ff !important;
-}
-
 #matrixCanvas {
-    filter: hue-rotate(110deg) saturate(190%) brightness(115%) !important;
+    filter: hue-rotate(120deg) saturate(190%) brightness(115%);
+}
+
+::selection {
+    color: #ffffff;
+    background: var(--royal-blue);
 }
