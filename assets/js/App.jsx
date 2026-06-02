@@ -2,35 +2,35 @@ const slides = [
   {
     categoria: 'Tecnologia',
     titulo: 'Assistência técnica para computadores',
-    subtitulo: 'Manutenção, diagnóstico e suporte para deixar o equipamento pronto para uso.',
-    texto: 'Atendimento para computadores e notebooks com foco em resolver problemas de desempenho, instalação de programas, formatação, limpeza, organização e suporte básico para o dia a dia.',
+    subtitulo: 'Seu computador mais rápido, organizado e pronto para uso.',
+    texto: 'Atendimento para computadores e notebooks com diagnóstico, formatação, instalação de programas, limpeza, organização e suporte para o dia a dia.',
     visual: 'YF TECH',
     etiqueta: 'Tecnologia',
-    pontos: ['Diagnóstico do problema', 'Manutenção preventiva', 'Orientação após o serviço']
+    pontos: ['Diagnóstico claro', 'Manutenção preventiva', 'Orientação após o serviço']
   },
   {
     categoria: 'Eventos infantis',
     titulo: 'Personagem para festas infantis',
-    subtitulo: 'Presença temática para deixar o aniversário mais divertido, visual e memorável.',
-    texto: 'Atuação com personagem em festas infantis e eventos familiares, com entrada temática, interação com convidados, fotos e presença animada durante o evento.',
+    subtitulo: 'Uma presença temática para transformar a festa em lembrança.',
+    texto: 'Atuação com personagem em festas infantis e eventos familiares, com entrada temática, fotos, interação com convidados e presença animada durante o evento.',
     visual: 'FESTAS',
     etiqueta: 'Eventos infantis',
     pontos: ['Entrada do personagem', 'Fotos com convidados', 'Interação com as crianças']
   },
   {
-    categoria: 'Tecnologia',
-    titulo: 'Soluções digitais e automações',
-    subtitulo: 'Projetos simples para organizar processos, planilhas e rotinas repetitivas.',
-    texto: 'Criação de páginas, sistemas pequenos, planilhas inteligentes e automações para transformar tarefas manuais em fluxos mais claros e organizados.',
+    categoria: 'Soluções digitais',
+    titulo: 'Sites, automações e organização digital',
+    subtitulo: 'Soluções simples para facilitar sua rotina ou apresentar seu trabalho.',
+    texto: 'Criação de páginas, sistemas pequenos, planilhas inteligentes e automações para transformar tarefas manuais em processos mais claros e práticos.',
     visual: 'WEB AUTO',
-    etiqueta: 'Projetos digitais',
+    etiqueta: 'Digital',
     pontos: ['Páginas web', 'Automações com Python', 'Organização de dados']
   },
   {
-    categoria: 'Eventos infantis',
-    titulo: 'Experiência temática para eventos',
-    subtitulo: 'Um serviço pensado para fotos, interação, surpresa e presença de palco.',
-    texto: 'A proposta dos eventos é criar uma lembrança marcante para a festa, mantendo organização, cuidado com o público e uma apresentação visual forte.',
+    categoria: 'Experiência temática',
+    titulo: 'Animação para eventos especiais',
+    subtitulo: 'Fotos, interação e presença de palco para momentos mais marcantes.',
+    texto: 'Serviço pensado para criar uma experiência visual e divertida em aniversários, comemorações, encontros geek e ações personalizadas.',
     visual: 'HERÓI',
     etiqueta: 'Animação',
     pontos: ['Momentos para fotos', 'Participação personalizada', 'Energia de personagem']
@@ -38,17 +38,17 @@ const slides = [
 ];
 
 const cardsServicos = [
-  ['Assistência tecnológica', 'Formatação, manutenção, instalação de programas, suporte para redes, impressoras e organização digital.'],
-  ['Projetos digitais', 'Sites, automações, planilhas inteligentes, sistemas simples e soluções para pequenos processos.'],
+  ['Assistência técnica', 'Formatação, manutenção, instalação de programas, suporte para redes, impressoras e organização digital.'],
+  ['Soluções digitais', 'Sites, automações, planilhas inteligentes, sistemas simples e soluções para pequenos processos.'],
   ['Festas infantis', 'Presença de personagem, entrada temática, fotos, interação com convidados e momentos especiais.'],
   ['Eventos personalizados', 'Ações temáticas para aniversários, comemorações, encontros geek e experiências familiares.']
 ];
 
 const projetos = [
-  ['Conciliador Bancário', 'Sistema para comparar arquivos de ERP com relatórios bancários e encontrar divergências financeiras.', 'Tecnologia'],
-  ['Controle de EPIs', 'Aplicação para controlar entregas, estoque, responsáveis e assinaturas usando base em planilhas.', 'Tecnologia'],
-  ['Animação com personagem', 'Trabalho com presença temática, interação, fotos e energia visual para eventos infantis e familiares.', 'Eventos'],
-  ['YF Services', 'Marca pessoal que reúne suporte tecnológico e eventos em uma apresentação comercial equilibrada.', 'Tecnologia + Eventos']
+  ['Conciliador Bancário', 'Sistema para comparar arquivos de ERP com relatórios bancários e encontrar divergências financeiras.', 'Projeto de tecnologia'],
+  ['Controle de EPIs', 'Aplicação para controlar entregas, estoque, responsáveis e assinaturas usando base em planilhas.', 'Solução digital'],
+  ['Eventos com personagem', 'Presença temática para fotos, interação e momentos especiais em festas infantis e eventos familiares.', 'Eventos infantis'],
+  ['YF Services', 'Marca que reúne serviços de tecnologia e experiências temáticas em uma apresentação simples, direta e profissional.', 'Marca comercial']
 ];
 
 function Header() {
@@ -119,8 +119,8 @@ function Servicos() {
     <section id="servicos" className="content-section">
       <div className="section-heading">
         <span>Serviços</span>
-        <h2>Metade tecnologia. Metade eventos infantis.</h2>
-        <p>A YF Services funciona como uma marca com duas áreas: suporte e soluções digitais para quem precisa resolver problemas, e eventos temáticos para quem quer criar uma experiência marcante.</p>
+        <h2>Tecnologia para resolver. Eventos para encantar.</h2>
+        <p>A YF Services oferece atendimento técnico para computadores, soluções digitais sob medida e experiências temáticas para festas infantis e eventos especiais.</p>
       </div>
       <div className="cards-grid">
         {cardsServicos.map(([titulo, texto]) => (
@@ -139,8 +139,8 @@ function GaleriaProjetos() {
     <section id="galeria" className="content-section portfolio-section">
       <div className="section-heading">
         <span>Portfólio</span>
-        <h2>Trabalhos técnicos e experiências de evento</h2>
-        <p>Essa área serve para mostrar tanto projetos de tecnologia quanto trabalhos com personagem, reforçando as duas frentes da marca.</p>
+        <h2>Soluções digitais e experiências realizadas</h2>
+        <p>Conheça algumas frentes de trabalho da YF Services, unindo suporte tecnológico, projetos digitais e eventos temáticos.</p>
       </div>
       <div className="project-list">
         {projetos.map(([titulo, texto, stack]) => (
@@ -164,7 +164,7 @@ function Sobre() {
         <span>Sobre mim</span>
         <h2>Alyson Yan</h2>
       </div>
-      <p>Sou estudante de Ciência da Computação, trabalho com suporte, hardware, programação e automação. Também atuo em eventos infantis com personagem, unindo presença visual, comunicação e cuidado com a experiência do público. A YF Services organiza essas duas frentes em uma marca comercial mais clara.</p>
+      <p>Sou estudante de Ciência da Computação e atuo com suporte, hardware, programação e automação. Também trabalho com eventos infantis usando personagem, unindo presença visual, comunicação e cuidado com a experiência do público.</p>
     </section>
   );
 }
@@ -173,8 +173,8 @@ function Contato() {
   return (
     <section id="contato" className="contact-section">
       <span>Contato</span>
-      <h2>Precisa de tecnologia ou quer animar um evento infantil?</h2>
-      <p>Use os links abaixo para solicitar atendimento, ver meus projetos ou acessar meu perfil profissional.</p>
+      <h2>Precisa de suporte técnico ou quer uma atração para seu evento?</h2>
+      <p>Entre em contato para solicitar atendimento, combinar uma apresentação temática ou conhecer meus projetos.</p>
       <div className="contact-actions">
         <a href="mailto:alyson.cienciacomp@gmail.com">E-mail</a>
         <a href="https://github.com/Alyson-Yan" target="_blank" rel="noreferrer">GitHub</a>
