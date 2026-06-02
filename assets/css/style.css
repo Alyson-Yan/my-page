@@ -16,7 +16,7 @@ html, body {
     overflow-x: hidden;
     background: black;
     font-family: 'Courier New', monospace;
-    color: #00ff00;
+    color: rgb(65, 105, 225);
 }
 
 body {
@@ -71,7 +71,7 @@ nav a, .navbar a {
 
 nav a:hover, .navbar a:hover {
     color: #fff;
-    text-shadow: 0 0 8px lime;
+    text-shadow: 0 0 8px rgb(65, 105, 225);
 }
 
 /* ====== CONTAINER PRINCIPAL ====== */
@@ -201,8 +201,8 @@ p, li {
 .tecnologias span {
     padding: 6px 10px;
     border-radius: 6px;
-    border: 1px solid rgba(0, 255, 0, 0.45);
-    color: #b6ffb6;
+    border: 1px solid rgb(65, 105, 225);
+    color: #b8c7ff;
     font-size: 0.85em;
 }
 
@@ -216,14 +216,14 @@ p, li {
 }
 
 .contato a {
-    color: #00ff00;
+    color: rgb(65, 105, 225);
     text-decoration: none;
     font-weight: bold;
 }
 
 .contato a:hover {
     color: #fff;
-    text-shadow: 0 0 8px lime;
+    text-shadow: 0 0 8px rgb(65, 105, 225);
 }
 
 /* ====== RESPONSIVIDADE ====== */
